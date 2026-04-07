@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block description %}Welcome to legaldoc.site{% endblock %}
+
+{% block content %}
+<div class="text-center py-20">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Welcome to Legaldoc</h1>
+    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        Your platform is live and ready. Configure your domain, set up Stripe, and start building.
+    </p>
+    <div class="space-x-4">
+        <a href="/admin/" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">Admin Panel</a>
+        <a href="{% url 'login' %}" class="inline-block bg-gray-100 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-200">Sign In</a>
+    </div>
+</div>
+{% endblock %}

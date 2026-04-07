@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome{% endblock %} — legaldoc.site</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <link rel="canonical" href="https://legaldoc.site{{ request.path }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-indigo-600">Legaldoc</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    {% if user.is_authenticated %}
+                        <a href="/dashboard/" class="text-gray-700 hover:text-indigo-600">Dashboard</a>
+                        <form method="post" action="{% url 'logout' %}" class="inline">{% csrf_token %}
+                            <button type="submit" class="text-gray-700 hover:text-indigo-600">Logout</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="text-gray-700 hover:text-indigo-600">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {% if messages %}
+        <div class="mb-4">
+            {% for message in messages %}
+            <div class="p-4 rounded {% if message.tags == 'error' %}bg-red-100 text-red-700{% endif %}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-white border-t mt-auto py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
+            &copy; {{ now|date:"Y" }} legaldoc.site. All rights reserved.
+            <br>Developed by cjbwebdevelopment.com
+        </div>
+    </footer>
+</body>
+</html>
