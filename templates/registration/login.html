@@ -3,22 +3,28 @@
 {% block description %}Sign in to your account{% endblock %}
 
 {% block content %}
-<div class="max-w-md mx-auto py-12">
-    <div class="bg-white rounded-lg shadow p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Sign In</h2>
-        <form method="post">{% csrf_token %}
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Username</label>
-                    <input type="text" name="username" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2" required>
+<div class="max-w-md mx-auto py-16">
+    <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <div class="border-b border-slate-200 bg-slate-50 px-8 py-6">
+            <h2 class="text-2xl font-semibold text-slate-900">Sign in to LegalDoc</h2>
+            <p class="mt-2 text-sm text-slate-600">Secure access to your documents and subscription dashboard.</p>
+        </div>
+        <div class="px-8 py-8">
+            <form method="post">{% csrf_token %}
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700">Username</label>
+                        <input type="text" name="username" class="mt-2 block w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700">Password</label>
+                        <input type="password" name="password" class="mt-2 block w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" required>
+                    </div>
+                    <button type="submit" class="w-full rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Sign In</button>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" name="password" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2" required>
-                </div>
-            </div>
-            <button type="submit" class="mt-6 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Sign In</button>
-        </form>
+            </form>
+            <p class="mt-6 text-center text-sm text-slate-500">New to LegalDoc? <a href="{% url 'users:signup' %}" class="font-semibold text-slate-900 hover:underline">Create an account</a>.</p>
+        </div>
     </div>
 </div>
 {% endblock %}

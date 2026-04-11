@@ -3,14 +3,49 @@
 {% block description %}Welcome to legaldoc.site{% endblock %}
 
 {% block content %}
-<div class="text-center py-20">
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">Welcome to Legaldoc</h1>
-    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-        Your platform is live and ready. Configure your domain, set up Stripe, and start building.
-    </p>
-    <div class="space-x-4">
-        <a href="/admin/" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">Admin Panel</a>
-        <a href="{% url 'login' %}" class="inline-block bg-gray-100 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-200">Sign In</a>
+<div class="py-20">
+    <div class="max-w-4xl mx-auto text-center">
+        <p class="text-sm uppercase tracking-[0.24em] text-slate-400 mb-4">Legal document automation</p>
+        <h1 class="text-4xl font-semibold text-slate-900 sm:text-5xl">A clean, professional foundation for LegalDoc</h1>
+        <p class="mt-6 text-lg leading-8 text-slate-600 max-w-3xl mx-auto">
+            Built to deliver secure accounts, subscription billing, and polished document workflows without the flashy or cartoonish interface.
+            This is a subtle, dependable SaaS product experience for legal teams and small businesses.
+        </p>
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href="/admin/" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-900 transition hover:border-slate-400 hover:bg-slate-50">
+                Admin Panel
+            </a>
+            <a href="{% url 'login' %}" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-slate-50 px-6 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+                Sign In
+            </a>
+            <a href="{% url 'users:signup' %}" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                Sign Up
+            </a>
+        </div>
     </div>
 </div>
+
+<section class="bg-slate-50 border-t border-slate-200 py-12">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="mb-10 text-center">
+            <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Core Features</p>
+            <h2 class="text-3xl font-semibold text-slate-900 mt-3">A complete legal SaaS foundation</h2>
+            <p class="mt-3 text-slate-600 max-w-2xl mx-auto">LegalDoc includes secure auth, subscription billing scaffolding, and a polished dashboard experience so you can build your document workflows and AI integrations faster.</p>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-3">
+            <div class="rounded-3xl bg-white border border-slate-200 p-6 shadow-sm">
+                <h3 class="text-lg font-semibold text-slate-900 mb-2">Secure accounts</h3>
+                <p class="text-slate-600">Built on Django auth with login and signup ready to extend with email verification and OAuth.</p>
+            </div>
+            <div class="rounded-3xl bg-white border border-slate-200 p-6 shadow-sm">
+                <h3 class="text-lg font-semibold text-slate-900 mb-2">Subscription billing</h3>
+                <p class="text-slate-600">Billing is isolated in its own app, making Stripe or Paddle integration and plan gating easier.</p>
+            </div>
+            <div class="rounded-3xl bg-white border border-slate-200 p-6 shadow-sm">
+                <h3 class="text-lg font-semibold text-slate-900 mb-2">Document dashboard</h3>
+                <p class="text-slate-600">A simple dashboard layout is included with clean extension points for document creation, management, and export.</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
