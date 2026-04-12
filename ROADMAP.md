@@ -1,4 +1,5 @@
-# Sprint 1
-- Review key features and prioritize tasks
-- Improve frontend UX
-- Enhance document generation capabilities
+# Roadmap
+1. Initial setup and environment configuration
+2. Legal document template creation
+3. Integration of version control system
+4. Testing framework implementation
