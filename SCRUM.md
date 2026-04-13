@@ -1,1 +1,1 @@
-Sprint 0.1 completed, proceeding with Sprint 0.2 and 0.3
+Completed sprints 0.1, 0.2, and 0.3
