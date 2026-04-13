@@ -8,3 +8,9 @@ staticfiles/
 venv/
 .venv/
 *.sqlite3
+ai_bot.py
+*.bak
+.env
+.qwentin_state.json
+__pycache__/
+*.pyc
