@@ -1,12 +1,4 @@
-## Sprint 0.1 Findings
-
-### requirements.txt:
-
-* contents: [insert contents of requirements.txt here]
-
-### entrypoint.sh:
-
-* contents: [insert contents of entrypoint.sh here]
-
-* executable: true
-* correct: true
+## Sprint 0.2 Findings
+Database config: PostgreSQL engine configured
+Missing migrations: none
+Models with __str__ methods: all models checked
